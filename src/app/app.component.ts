@@ -115,7 +115,10 @@ export class AppComponent {
   // ];
 
   barChartLabels: Label[] = [];
-  barChartData: ChartDataSets[] = [];
+  barChartData: ChartDataSets[] = [
+    { data: [], label: "" },
+    { data: [], label: "" }
+  ];
   top25deathsData: Array<number> = [];
   top25InfectedData: Array<number> = [];
   constructor(private http: HttpClient) {}
