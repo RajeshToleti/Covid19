@@ -12,8 +12,7 @@ export class WorldmapComponent implements OnInit {
 
   public geoChart: GoogleChartInterface = {
     // use :any or :GoogleChartInterface
-    dataSourceUrl:
-      "https://spreadsheets.google.com/a/google.com/tq?key=AIzaSyB34dO_PfMWd8icul9F6TFEuahAADKkYFQ&pub=1",
+
     chartType: "GeoChart",
     dataTable: [
       ["Country", "Population (2019)"],

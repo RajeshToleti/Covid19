@@ -19,7 +19,12 @@ import { WorldmapComponent } from "./worldmap/worldmap.component";
     ChartsModule,
     Ng2GoogleChartsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: "mapsApiKey",
+      useValue: "AIzaSyB34dO_PfMWd8icul9F6TFEuahAADKkYFQ"
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
