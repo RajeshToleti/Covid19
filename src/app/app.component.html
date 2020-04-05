@@ -1,13 +1,15 @@
-<h2>Covid-19 Live stats</h2>
-<span style="float: left; width: 50%; text-align: left;">
-  Report Date: {{ reportDate | date }}</span
->
-<span style="color:blue; float: left; width: 50%;text-align:right;"
-  ><b>&copy; Rajesh Toleti</b></span
->
+<div class="navbar">
+  <a class="active" href="#"
+    ><i class="fa fa-fw fa-home"></i> Covid-19
+    {{ reportDate | date }}
+  </a>
 
+  <a href="#"><i class="fa fa-fw fa-bar-chart"></i>Charts</a>
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  <a href="#"><i class="fa fa-fw fa-user"></i> Rajesh Toleti</a>
+</div>
 <ag-grid-angular
-  style="height: 500px;"
+  style="height: 500px; margin-top: 5px;"
   class="ag-theme-alpine"
   [rowData]="rowData"
   [columnDefs]="columnDefs"
@@ -28,7 +30,7 @@
 <br /><br />
 <h4>Top 25 Countries (Number of deaths)</h4>
 
-<div style="width:99%;">
+<div style="width: 99%;">
   <canvas
     baseChart
     [datasets]="barChartData"
@@ -42,3 +44,4 @@
   </canvas>
 </div>
 <app-worldmap></app-worldmap>
+<router-outlet></router-outlet>

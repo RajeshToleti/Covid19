@@ -1,10 +1,46 @@
 @import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
 @import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 
 .ag-theme-alpine {
   @include ag-theme-alpine(
     (
-      odd-row-background-color: #fffee4
+      odd-row-background-color: #fffee4,
     )
   );
+}
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 2px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 25px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: rgb(235, 175, 222);
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #61676b;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
 }

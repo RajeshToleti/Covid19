@@ -8,9 +8,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { ChartsModule } from "ng2-charts";
 import { Ng2GoogleChartsModule } from "ng2-google-charts";
 import { WorldmapComponent } from "./worldmap/worldmap.component";
+import { CountryDetailsComponent } from './country-details/country-details.component';
 
 @NgModule({
-  declarations: [AppComponent, WorldmapComponent],
+  declarations: [AppComponent, WorldmapComponent, CountryDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
