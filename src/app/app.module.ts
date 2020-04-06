@@ -8,7 +8,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { ChartsModule } from "ng2-charts";
 import { Ng2GoogleChartsModule } from "ng2-google-charts";
 import { WorldmapComponent } from "./worldmap/worldmap.component";
-import { CountryDetailsComponent } from './country-details/country-details.component';
+import { CountryDetailsComponent } from "./country-details/country-details.component";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [AppComponent, WorldmapComponent, CountryDetailsComponent],
@@ -18,14 +19,15 @@ import { CountryDetailsComponent } from './country-details/country-details.compo
     HttpClientModule,
     AgGridModule.withComponents([]),
     ChartsModule,
-    Ng2GoogleChartsModule
+    Ng2GoogleChartsModule,
+    FontAwesomeModule,
   ],
   providers: [
     {
       provide: "mapsApiKey",
-      useValue: "AIzaSyB34dO_PfMWd8icul9F6TFEuahAADKkYFQ"
-    }
+      useValue: "AIzaSyB34dO_PfMWd8icul9F6TFEuahAADKkYFQ",
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

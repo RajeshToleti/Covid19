@@ -1,12 +1,18 @@
 <div class="navbar">
   <a class="active" href="#"
-    ><i class="fa fa-fw fa-home"></i> Covid-19
+    ><fa-icon [icon]="faVirus" style="color: white;"></fa-icon> Covid-19
     {{ reportDate | date }}
   </a>
 
-  <a href="#"><i class="fa fa-fw fa-bar-chart"></i>Charts</a>
-  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-  <a href="#"><i class="fa fa-fw fa-user"></i> Rajesh Toleti</a>
+  <a href="#"
+    ><fa-icon [icon]="faChartBar" style="color: white;"></fa-icon>Charts</a
+  >
+  <a href="#"
+    ><fa-icon [icon]="faEnvelope" style="color: white;"></fa-icon> Contact</a
+  >
+  <a href="#"
+    ><fa-icon [icon]="faUser" style="color: white;"></fa-icon> Rajesh Toleti</a
+  >
 </div>
 <ag-grid-angular
   style="height: 500px; margin-top: 5px;"

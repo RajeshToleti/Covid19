@@ -2,13 +2,25 @@ import { Component } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { ChartOptions, ChartType, ChartDataSets } from "chart.js";
 import { Label, Color } from "ng2-charts";
+import {
+  faHome,
+  faChartBar,
+  faUser,
+  faVirus,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
+  faHome = faHome;
+  faVirus = faVirus;
+  faChartBar = faChartBar;
+  faUser = faUser;
+  faEnvelope = faEnvelope;
   title = "Covid19";
   reportDate: Date;
   columnDefs = [
@@ -17,45 +29,45 @@ export class AppComponent {
       field: "Country",
       sortable: true,
       filter: true,
-      cellRenderer: Country =>
-        `<a href="http://google.com/${Country.value}" >${Country.value}</a>`
+      cellRenderer: (Country) =>
+        `<a href="http://google.com/${Country.value}" >${Country.value}</a>`,
     },
     {
       headerName: "Total Confirmed",
       field: "TotalConfirmed",
       sortable: true,
-      filter: true
+      filter: true,
     },
     {
       headerName: "New Confirmed",
       field: "NewConfirmed",
       sortable: true,
-      filter: true
+      filter: true,
     },
     {
       headerName: "Total Deaths",
       field: "TotalDeaths",
       sortable: true,
-      filter: true
+      filter: true,
     },
     {
       headerName: "New Deaths",
       field: "NewDeaths",
       sortable: true,
-      filter: true
+      filter: true,
     },
     {
       headerName: "New Recovered",
       field: "NewRecovered",
       sortable: true,
-      filter: true
+      filter: true,
     },
     {
       headerName: "Total Recovered",
       field: "TotalRecovered",
       sortable: true,
-      filter: true
-    }
+      filter: true,
+    },
   ];
 
   defaultColDef: {
@@ -90,11 +102,11 @@ export class AppComponent {
     responsive: true,
     plugins: {
       datalabels: {
-        display: function(context) {
+        display: function (context) {
           return context.dataset.barChartData[context.dataIndex] >= 100; // or >= 1 or ...
-        }
-      }
-    }
+        },
+      },
+    },
   };
 
   barChartType: ChartType = "bar";
@@ -117,7 +129,7 @@ export class AppComponent {
   barChartLabels: Label[] = [];
   barChartData: ChartDataSets[] = [
     { data: [], label: "" },
-    { data: [], label: "" }
+    { data: [], label: "" },
   ];
   top25deathsData: Array<number> = [];
   top25InfectedData: Array<number> = [];
@@ -126,7 +138,7 @@ export class AppComponent {
   ngOnInit() {
     //this.rowData = this.http.get("https://api.covid19api.com/countries");
     this.http.get("https://api.covid19api.com/summary").subscribe(
-      data => {
+      (data) => {
         delete data["Countries"][0];
         this.rowData = data["Countries"];
         this.reportDate = data["Date"];
@@ -143,7 +155,7 @@ export class AppComponent {
         }
         this.barChartData = [
           { data: this.top25deathsData, label: "TotalDeaths" },
-          { data: this.top25InfectedData, label: "TotalInfected" }
+          { data: this.top25InfectedData, label: "TotalInfected" },
         ];
       },
       (err: HttpErrorResponse) => {
