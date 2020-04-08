@@ -10,9 +10,10 @@ import { Ng2GoogleChartsModule } from "ng2-google-charts";
 import { WorldmapComponent } from "./worldmap/worldmap.component";
 import { CountryDetailsComponent } from "./country-details/country-details.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { CountriesGridComponent } from './countries-grid/countries-grid.component';
 
 @NgModule({
-  declarations: [AppComponent, WorldmapComponent, CountryDetailsComponent],
+  declarations: [AppComponent, WorldmapComponent, CountryDetailsComponent, CountriesGridComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

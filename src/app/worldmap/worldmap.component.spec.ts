@@ -1,16 +1,18 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { WorldmapComponent } from './worldmap.component';
+import { WorldmapComponent } from "./worldmap.component";
+import { Ng2GoogleChartsModule } from "ng2-google-charts";
+import { HttpClientModule } from "@angular/common/http";
 
-describe('WorldmapComponent', () => {
+describe("WorldmapComponent", () => {
   let component: WorldmapComponent;
   let fixture: ComponentFixture<WorldmapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorldmapComponent ]
-    })
-    .compileComponents();
+      imports: [Ng2GoogleChartsModule, HttpClientModule],
+      declarations: [WorldmapComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +21,7 @@ describe('WorldmapComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
