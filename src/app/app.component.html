@@ -1,13 +1,14 @@
 <div class="navbar">
-  <a class="active" href="#"
-    ><fa-icon [icon]="faVirus" style="color: white;"></fa-icon> Covid-19
+  <a href="#" style="background-color: red;"
+    ><fa-icon [icon]="faVirus" style="color: white;"></fa-icon>
+    Covid-19
     {{ reportDate | date }}
   </a>
 
   <a routerLink="/worldmap"
     ><fa-icon [icon]="faChartBar" style="color: white;"></fa-icon>Charts</a
   >
-  <a href="#"
+  <a routerLink="/contact"
     ><fa-icon [icon]="faEnvelope" style="color: white;"></fa-icon> Contact</a
   >
   <a href="#"

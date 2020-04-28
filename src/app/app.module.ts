@@ -14,6 +14,7 @@ import { CountriesGridComponent } from "./countries-grid/countries-grid.componen
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatTabsModule } from "@angular/material/tabs";
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MatTabsModule } from "@angular/material/tabs";
     WorldmapComponent,
     CountryDetailsComponent,
     CountriesGridComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
