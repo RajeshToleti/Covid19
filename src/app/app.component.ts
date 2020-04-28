@@ -20,7 +20,7 @@ export class AppComponent {
   faUser = faUser;
   faEnvelope = faEnvelope;
   title = "Covid19";
-
+  reportDate: Date;
   constructor() {}
 
   ngOnInit() {}
