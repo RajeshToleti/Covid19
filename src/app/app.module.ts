@@ -10,10 +10,18 @@ import { Ng2GoogleChartsModule } from "ng2-google-charts";
 import { WorldmapComponent } from "./worldmap/worldmap.component";
 import { CountryDetailsComponent } from "./country-details/country-details.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
-import { CountriesGridComponent } from './countries-grid/countries-grid.component';
+import { CountriesGridComponent } from "./countries-grid/countries-grid.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatSliderModule } from "@angular/material/slider";
+import { MatTabsModule } from "@angular/material/tabs";
 
 @NgModule({
-  declarations: [AppComponent, WorldmapComponent, CountryDetailsComponent, CountriesGridComponent],
+  declarations: [
+    AppComponent,
+    WorldmapComponent,
+    CountryDetailsComponent,
+    CountriesGridComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +30,9 @@ import { CountriesGridComponent } from './countries-grid/countries-grid.componen
     ChartsModule,
     Ng2GoogleChartsModule,
     FontAwesomeModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatTabsModule,
   ],
   providers: [
     {

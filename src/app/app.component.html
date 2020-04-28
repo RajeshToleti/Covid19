@@ -4,7 +4,7 @@
     {{ reportDate | date }}
   </a>
 
-  <a href="#"
+  <a routerLink="/worldmap"
     ><fa-icon [icon]="faChartBar" style="color: white;"></fa-icon>Charts</a
   >
   <a href="#"
@@ -14,13 +14,9 @@
     ><fa-icon [icon]="faUser" style="color: white;"></fa-icon> Rajesh Toleti</a
   >
 </div>
-<ag-grid-angular
-  style="height: 500px; margin: 5px;"
-  class="ag-theme-alpine"
-  [rowData]="rowData"
-  [columnDefs]="columnDefs"
->
-</ag-grid-angular>
+
+<!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
+
 <!-- <div style="width: 40%;">
   <canvas
     baseChart
@@ -33,21 +29,5 @@
   >
   </canvas>
 </div> -->
-<br /><br />
-<h4 style="margin: 5px;">Top 25 Countries (Number of deaths)</h4>
 
-<div style="width: 99%; margin: 5px;">
-  <canvas
-    baseChart
-    [datasets]="barChartData"
-    [labels]="barChartLabels"
-    [options]="barChartOptions"
-    [plugins]="barChartPlugins"
-    [legend]="barChartLegend"
-    chartType="horizontalBar"
-    [colors]="barChartColors"
-  >
-  </canvas>
-</div>
-<app-worldmap></app-worldmap>
 <router-outlet></router-outlet>

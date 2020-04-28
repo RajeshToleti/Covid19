@@ -1,6 +1,6 @@
 @import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
 @import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss";
-
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 .ag-theme-alpine {
   @include ag-theme-alpine(
     (
@@ -42,4 +42,13 @@
     float: none;
     display: block;
   }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
