@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { ChartOptions, ChartType, ChartDataSets } from "chart.js";
 import { Label, Color } from "ng2-charts";
+import { faChartBar } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-countries-grid",
@@ -11,6 +12,7 @@ import { Label, Color } from "ng2-charts";
 export class CountriesGridComponent implements OnInit {
   title = "Covid19";
   reportDate: Date;
+  faChartBar = faChartBar;
   columnDefs = [
     {
       headerName: "Country",

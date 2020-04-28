@@ -8,7 +8,11 @@
     >
     </ag-grid-angular>
   </mat-tab>
-  <mat-tab label="Top 25">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <fa-icon [icon]="faChartBar" style="color: goldenrod;"></fa-icon>
+      <span>Top 25</span>
+    </ng-template>
     <div style="width: 100%; margin: 5px;">
       <canvas
         baseChart
@@ -22,5 +26,24 @@
       >
       </canvas>
     </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <img
+        src="../../assets/india-flag.jpg"
+        style="width: 10%; height: auto; margin: 2px;"
+      />
+      <span>India</span>
+    </ng-template>
+
+    <div style="width: 100%; margin: 5px;">
+      <iframe
+        src="https://www.covid19india.org/"
+        height="2700px"
+        width="100%"
+        target="_self"
+      ></iframe>
+    </div>
+    <h4 style="text-align: center;">*This is an external website*</h4>
   </mat-tab>
 </mat-tab-group>

@@ -2,10 +2,10 @@ import { Component } from "@angular/core";
 
 import {
   faHome,
-  faChartBar,
   faUser,
   faVirus,
   faEnvelope,
+  faGlobeAmericas,
 } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -16,9 +16,9 @@ import {
 export class AppComponent {
   faHome = faHome;
   faVirus = faVirus;
-  faChartBar = faChartBar;
   faUser = faUser;
   faEnvelope = faEnvelope;
+  faGlobeAmericas = faGlobeAmericas;
   title = "Covid19";
   reportDate: Date;
   constructor() {}
