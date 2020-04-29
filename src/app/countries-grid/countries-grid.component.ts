@@ -26,7 +26,7 @@ export class CountriesGridComponent implements OnInit {
       headerName: "Total Confirmed",
       field: "TotalConfirmed",
       sortable: true,
-      filter: true,
+      filter: "agNumberColumnFilter",
     },
     {
       headerName: "New Confirmed",
@@ -38,25 +38,25 @@ export class CountriesGridComponent implements OnInit {
       headerName: "Total Deaths",
       field: "TotalDeaths",
       sortable: true,
-      filter: true,
+      filter: "agNumberColumnFilter",
     },
     {
       headerName: "New Deaths",
       field: "NewDeaths",
       sortable: true,
-      filter: true,
+      filter: "agNumberColumnFilter",
     },
     {
       headerName: "New Recovered",
       field: "NewRecovered",
       sortable: true,
-      filter: true,
+      filter: "agNumberColumnFilter",
     },
     {
       headerName: "Total Recovered",
       field: "TotalRecovered",
       sortable: true,
-      filter: true,
+      filter: "agNumberColumnFilter",
     },
   ];
 
