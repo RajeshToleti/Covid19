@@ -1,1 +1,15 @@
-<p>country-details works!</p>
+<div style="width: 95%; margin: 25px;">
+  <h4 style="color: burlywood;">{{ country | uppercase }}</h4>
+  <canvas
+    baseChart
+    height="30vh"
+    width="80vw"
+    [chartType]="'line'"
+    [datasets]="chartData"
+    [labels]="chartLabels"
+    [options]="chartOptions"
+    [legend]="true"
+    [colors]="chartColors"
+  >
+  </canvas>
+</div>

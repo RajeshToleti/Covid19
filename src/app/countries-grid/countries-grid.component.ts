@@ -16,11 +16,11 @@ export class CountriesGridComponent implements OnInit {
   columnDefs = [
     {
       headerName: "Country",
-      field: "Country",
+      field: "Slug",
       sortable: true,
       filter: true,
-      cellRenderer: (Country) =>
-        `<a href="http://google.com/${Country.value}" >${Country.value}</a>`,
+      cellRenderer: (x) =>
+        `<a href="countryDetails/${x.value}" >${x.value.toUpperCase()}</a>`,
     },
     {
       headerName: "Total Confirmed",
@@ -127,6 +127,7 @@ export class CountriesGridComponent implements OnInit {
 
   ngOnInit() {
     //this.rowData = this.http.get("https://api.covid19api.com/countries");
+    //https://api.covid19api.com/dayone/country/IN/status/deaths/live
     this.http.get("https://api.covid19api.com/summary").subscribe(
       (data) => {
         delete data["Countries"][0];
