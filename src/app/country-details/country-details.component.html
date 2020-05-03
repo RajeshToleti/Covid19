@@ -1,5 +1,25 @@
 <div style="width: 95%; margin: 25px;">
   <h4 style="color: burlywood;">{{ country | uppercase }}</h4>
+  <mat-card>
+    <mat-card-content>
+      <section class="example-section">
+        <mat-checkbox
+          class="example-margin"
+          #Deaths
+          (change)="isDead($event)"
+          [checked]="true"
+          >Deaths</mat-checkbox
+        >
+        <mat-checkbox
+          class="example-margin"
+          (change)="isRecovered($event)"
+          #Recovered
+          >Recovered</mat-checkbox
+        >
+      </section>
+    </mat-card-content>
+  </mat-card>
+
   <canvas
     baseChart
     height="30vh"

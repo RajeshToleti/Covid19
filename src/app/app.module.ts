@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AgGridModule } from "ag-grid-angular";
@@ -14,7 +14,9 @@ import { CountriesGridComponent } from "./countries-grid/countries-grid.componen
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatTabsModule } from "@angular/material/tabs";
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from "./contact/contact.component";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatCardModule } from "@angular/material/";
 
 @NgModule({
   declarations: [
@@ -35,6 +37,9 @@ import { ContactComponent } from './contact/contact.component';
     BrowserAnimationsModule,
     MatSliderModule,
     MatTabsModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatCardModule,
   ],
   providers: [
     {

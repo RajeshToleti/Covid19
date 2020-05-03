@@ -16,7 +16,9 @@ export class CountryDetailsComponent implements OnInit {
   rowData: any;
   chartdata: any;
   country: string;
-
+  temp = 1;
+  Deaths = true;
+  Recovered = false;
   ChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -41,13 +43,32 @@ export class CountryDetailsComponent implements OnInit {
   ];
 
   deathsData: Array<number> = [];
-  // recoveredData: Array<number> = [];
+  recoveredData: Array<number> = [];
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit() {
     //this.rowData = this.http.get("https://api.covid19api.com/countries");
     //https://api.covid19api.com/dayone/country/IN/status/deaths/live
+    this.generateCharts();
+  }
 
+  isRecovered(event): void {
+    if (event.checked == true) {
+      this.Recovered = true;
+    } else {
+      this.Recovered = false;
+    }
+    this.generateCharts();
+  }
+  isDead(event): void {
+    if (event.checked == true) {
+      this.Deaths = true;
+    } else {
+      this.Deaths = false;
+    }
+    this.generateCharts();
+  }
+  generateCharts() {
     this.country = this.route.snapshot.paramMap.get("country");
     this.http
       .get("https://api.covid19api.com/total/dayone/country/" + this.country)
@@ -62,24 +83,39 @@ export class CountryDetailsComponent implements OnInit {
             ).toLocaleDateString();
             if (i == 0) {
               this.deathsData[i] = data[i]["Deaths"];
-              // this.recoveredData[i] = data[i]["Recovered"];
+              this.recoveredData[i] = data[i]["Recovered"];
             } else {
               this.deathsData[i] = data[i]["Deaths"] - data[i - 1]["Deaths"];
-              // this.recoveredData[i] = data[i]["Recovered"];
+              this.recoveredData[i] =
+                data[i]["Recovered"] - data[i - 1]["Recovered"];
             }
-
-            console.log(this.chartLabels[i]);
-            console.log(this.deathsData[i]);
           }
 
           // Object.entries(data).forEach(([key, value]) =>
           //   console.log(key, value)
           // );
-          //console.log(this.deathsData);
-          this.chartData = [
-            { data: this.deathsData, label: "Deaths" },
-            //{ data: this.recoveredData, label: "Recovered" },
-          ];
+
+          //console.log("Recovered " + this.Recovered);
+          //console.log("Deaths " + this.Deaths);
+
+          if (this.Recovered == true && this.Deaths == true) {
+            this.chartData = [
+              { data: this.deathsData, label: "Deaths" },
+              { data: this.recoveredData, label: "Recovered" },
+            ];
+          } else {
+            if (this.Recovered == true) {
+              this.chartData = [
+                { data: this.recoveredData, label: "Recovered" },
+              ];
+            } else if (this.Deaths == true) {
+              this.chartData = [{ data: this.deathsData, label: "Deaths" }];
+            } else {
+              this.chartData = [
+                { data: [], label: "Check one of the Options above" },
+              ];
+            }
+          }
         },
         (err: HttpErrorResponse) => {
           console.log(err.message);
