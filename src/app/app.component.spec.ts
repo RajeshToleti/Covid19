@@ -9,6 +9,10 @@ import { Ng2GoogleChartsModule } from "ng2-google-charts";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { CountryDetailsComponent } from "./country-details/country-details.component";
 import { CountriesGridComponent } from "./countries-grid/countries-grid.component";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatCardModule } from "@angular/material/";
+import { MatSliderModule } from "@angular/material/slider";
+import { MatTabsModule } from "@angular/material/tabs";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
@@ -20,6 +24,10 @@ describe("AppComponent", () => {
         ChartsModule,
         Ng2GoogleChartsModule,
         FontAwesomeModule,
+        MatSliderModule,
+        MatTabsModule,
+        MatCheckboxModule,
+        MatCardModule,
       ],
       declarations: [
         AppComponent,

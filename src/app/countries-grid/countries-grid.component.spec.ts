@@ -1,16 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { AgGridModule } from "ag-grid-angular";
+import { CountriesGridComponent } from "./countries-grid.component";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 
-import { CountriesGridComponent } from './countries-grid.component';
-
-describe('CountriesGridComponent', () => {
+describe("CountriesGridComponent", () => {
   let component: CountriesGridComponent;
   let fixture: ComponentFixture<CountriesGridComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountriesGridComponent ]
-    })
-    .compileComponents();
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [CountriesGridComponent],
+      imports: [AgGridModule.withComponents([]), HttpClientModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +22,7 @@ describe('CountriesGridComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
