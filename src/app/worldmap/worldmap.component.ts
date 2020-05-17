@@ -31,13 +31,13 @@ export class WorldmapComponent implements OnInit {
     },
   };
 
-  myfunction() {
-    let ccComponent = this.geoChart.component;
-    let ccWrapper = ccComponent.wrapper;
+  // myfunction() {
+  //   let ccComponent = this.geoChart.component;
+  //   let ccWrapper = ccComponent.wrapper;
 
-    //force a redraw
-    ccComponent.draw();
-  }
+  //   //force a redraw
+  //   ccComponent.draw();
+  // }
 
   constructor(private http: HttpClient) {}
 
