@@ -18,7 +18,7 @@ steps:
 - task: DeleteFiles@1
   displayName: 'Delete JUnit files'
   inputs:
-    SourceFolder: src/angular8/junit
+    SourceFolder: src/junit
     Contents: 'TEST*.xml'
 
 - script: |
@@ -37,7 +37,7 @@ steps:
   inputs:
     command: custom
     customCommand: run test -- --watch=false --code-coverage
-    workingDir: src/angular8
+    workingDir: src
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage Angular results'
@@ -62,14 +62,14 @@ steps:
   inputs:
     command: custom
     customCommand: run lint --  --format=stylish
-    workingDir: src/angular8
+    workingDir: src
 
 - task: Npm@1
   displayName: 'E2E Test Angular'
   inputs:
     command: custom
     customCommand: run e2e
-    workingDir: src/angular8
+    workingDir: src
 
 - task: PublishTestResults@2
   displayName: 'Publish Angular E2E test results'
