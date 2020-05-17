@@ -19,7 +19,7 @@ export class WorldmapComponent implements OnInit {
       ["Austria", 8858775],
       ["Belgium", 11467923],
       ["Bulgaria", 7000039],
-      ["Croatia", 4076246],
+      ["Croatia", 4076247],
       ["India", 875899],
     ],
     options: {
