@@ -31,7 +31,8 @@ steps:
     PathtoPublish: 'dist'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-    - task: Npm@1
+
+- task: Npm@1
   displayName: 'Test Angular'
   inputs:
     command: custom
