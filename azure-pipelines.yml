@@ -15,10 +15,15 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- task: DeleteFiles@1
+  displayName: 'Delete JUnit files'
+  inputs:
+    SourceFolder: src/angular8/junit
+    Contents: 'TEST*.xml'
+
 - script: |
     npm install -g @angular/cli
     npm install
-    ng test
     ng build --prod
   displayName: 'npm install and build'
 - task: PublishBuildArtifacts@1
@@ -26,3 +31,49 @@ steps:
     PathtoPublish: 'dist'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+    - task: Npm@1
+  displayName: 'Test Angular'
+  inputs:
+    command: custom
+    customCommand: run test -- --watch=false --code-coverage
+    workingDir: src/angular8
+
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage Angular results'
+  condition: succeededOrFailed()
+  inputs:
+    codeCoverageTool: Cobertura
+    summaryFileLocation: 'src/coverage/cobertura-coverage.xml'
+    reportDirectory: src/coverage
+    failIfCoverageEmpty: true
+
+- task: PublishTestResults@2
+  displayName: 'Publish Angular test results'
+  condition: succeededOrFailed()
+  inputs:
+    searchFolder: $(System.DefaultWorkingDirectory)/src/junit
+    testRunTitle: Angular
+    testResultsFormat: JUnit
+    testResultsFiles: "**/TESTS*.xml"
+
+- task: Npm@1
+  displayName: 'Lint Angular'
+  inputs:
+    command: custom
+    customCommand: run lint --  --format=stylish
+    workingDir: src/angular8
+
+- task: Npm@1
+  displayName: 'E2E Test Angular'
+  inputs:
+    command: custom
+    customCommand: run e2e
+    workingDir: src/angular8
+
+- task: PublishTestResults@2
+  displayName: 'Publish Angular E2E test results'
+  condition: succeededOrFailed()
+  inputs:
+    searchFolder: $(System.DefaultWorkingDirectory)/src/angular8/e2e/junit
+    testRunTitle: Angular_E2E
+    testResultsFormat: JUnit
