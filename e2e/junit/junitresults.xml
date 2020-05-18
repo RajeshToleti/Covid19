@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="2" tests="1" time="3.386">
+ <testsuite name="workspace-project App" timestamp="2020-05-18T00:21:02" hostname="localhost" time="3.386" errors="0" tests="1" skipped="0" disabled="0" failures="2">
+  <testcase classname="workspace-project App" name="should display welcome message" time="3.264">
+   <failure type="exception" message="Failed: No element found using locator: By(css selector, app-root .content span)"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, app-root .content span)
+    at C:\Users\Rajesh\Covid19\node_modules\protractor\built\element.js:814:27
+    at ManagedPromise.invokeCallback_ (C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\promise.js:2927:27
+    at C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)Error: 
+    at ElementArrayFinder.applyAction_ (C:\Users\Rajesh\Covid19\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.<computed> [as getText] (C:\Users\Rajesh\Covid19\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.<computed> [as getText] (C:\Users\Rajesh\Covid19\node_modules\protractor\built\element.js:831:22)
+    at AppPage.getTitleText (C:\Users\Rajesh\Covid19\e2e\src\app.po.ts:9:54)
+    at UserContext.<anonymous> (C:\Users\Rajesh\Covid19\e2e\src\app.e2e-spec.ts:13:17)
+    at C:\Users\Rajesh\Covid19\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\Rajesh\Covid19\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+From: Task: Run it("should display welcome message") in control flow
+    at UserContext.<anonymous> (C:\Users\Rajesh\Covid19\node_modules\jasminewd2\index.js:94:19)
+    at attempt (C:\Users\Rajesh\Covid19\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\Rajesh\Covid19\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at runNext (C:\Users\Rajesh\Covid19\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+    at C:\Users\Rajesh\Covid19\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+    at C:\Users\Rajesh\Covid19\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+    at C:\Users\Rajesh\Covid19\node_modules\jasminewd2\index.js:64:48
+    at ControlFlow.emit (C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\events.js:62:21)
+    at ControlFlow.shutdown_ (C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\promise.js:2674:10)
+    at C:\Users\Rajesh\Covid19\node_modules\selenium-webdriver\lib\promise.js:2599:53
+From asynchronous test: 
+Error: 
+    at Suite.<anonymous> (C:\Users\Rajesh\Covid19\e2e\src\app.e2e-spec.ts:11:3)
+    at addSpecsToSuite (C:\Users\Rajesh\Covid19\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (C:\Users\Rajesh\Covid19\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (C:\Users\Rajesh\Covid19\node_modules\jasmine\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (C:\Users\Rajesh\Covid19\e2e\src\app.e2e-spec.ts:4:1)
+    at Module._compile (internal/modules/cjs/loader.js:959:30)
+    at Module.m._compile (C:\Users\Rajesh\Covid19\node_modules\ts-node\src\index.ts:439:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:995:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\Rajesh\Covid19\node_modules\ts-node\src\index.ts:442:12)]]>
+   </failure>
+   <failure type="toContain" message="Expected [ Entry({ level: SEVERE, message: &apos;https://api.covid19api.com/summary - Failed to load resource: the server responded with a status of 429 (Too Many Requests)&apos;, timestamp: 1589757665409, type: &apos;&apos; }) ] not to contain &lt;jasmine.objectContaining(Object({ level: SEVERE }))&gt;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (C:\Users\Rajesh\Covid19\e2e\src\app.e2e-spec.ts:19:22)
+    at step (C:\Users\Rajesh\Covid19\node_modules\tslib\tslib.js:139:27)
+    at Object.next (C:\Users\Rajesh\Covid19\node_modules\tslib\tslib.js:120:57)
+    at fulfilled (C:\Users\Rajesh\Covid19\node_modules\tslib\tslib.js:110:62)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)]]>
+   </failure>
+  </testcase>
+ </testsuite>
+</testsuites>
