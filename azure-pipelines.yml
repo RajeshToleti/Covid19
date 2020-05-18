@@ -49,12 +49,6 @@ steps:
     testResultsFormat: JUnit
     testResultsFiles: "**/TESTS*.xml"
 
-- task: Npm@1
-  displayName: 'Lint Angular'
-  inputs:
-    command: custom
-    customCommand: run lint --  --format=stylish
-    workingDir: src
 
 - task: Npm@1
   displayName: 'E2E Test Angular'
