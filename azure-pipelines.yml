@@ -39,14 +39,6 @@ steps:
     customCommand: run test -- --watch=false --code-coverage
     workingDir: src
 
-- task: PublishCodeCoverageResults@1
-  displayName: 'Publish code coverage Angular results'
-  condition: succeededOrFailed()
-  inputs:
-    codeCoverageTool: Cobertura
-    summaryFileLocation: 'src/coverage/cobertura-coverage.xml'
-    reportDirectory: src/coverage
-    failIfCoverageEmpty: true
 
 - task: PublishTestResults@2
   displayName: 'Publish Angular test results'
