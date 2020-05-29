@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AgGridModule } from "ag-grid-angular";
@@ -17,7 +17,9 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { ContactComponent } from "./contact/contact.component";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatCardModule } from "@angular/material/";
-
+import { MatInputModule } from "@angular/material/input";
+import { MatButtonModule } from "@angular/material/button";
+import { MatSnackBar, MatSnackBarModule } from "@angular/material";
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,10 @@ import { MatCardModule } from "@angular/material/";
     MatCheckboxModule,
     FormsModule,
     MatCardModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatSnackBarModule,
   ],
   providers: [
     {

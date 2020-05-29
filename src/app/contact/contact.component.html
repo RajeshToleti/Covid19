@@ -2,3 +2,50 @@
   <fa-icon [icon]="faEnvelope" style="color: blue; margin: 5px;"> </fa-icon>
   <a href="mailto:I@Rajesh.name"> I@Rajesh.name</a>
 </p>
+<form class="contact-form" [formGroup]="contactForm">
+  <mat-form-field class="contact-full-width">
+    <mat-label>Name</mat-label>
+    <input matInput required [formControl]="nameFormControl" />
+    <mat-error *ngIf="nameFormControl.hasError('required')">
+      Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="contact-full-width">
+    <mat-label>Email</mat-label>
+    <input
+      required
+      matInput
+      [formControl]="emailFormControl"
+      placeholder="Ex. pat@example.com"
+    />
+    <mat-error
+      *ngIf="
+        emailFormControl.hasError('email') &&
+        !emailFormControl.hasError('required')
+      "
+    >
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="contact-full-width">
+    <mat-label>Please leave a comment</mat-label>
+    <textarea
+      required
+      matInput
+      mdTextareaAutosize
+      [formControl]="commentFormControl"
+      rows="2"
+      placeholder="ex: This dashboard looks good..."
+    ></textarea>
+
+    <mat-error *ngIf="commentFormControl.hasError('required')">
+      Feedback is <strong>required</strong>
+    </mat-error> </mat-form-field
+  ><br />
+  <button mat-raised-button color="primary" (click)="submitContactInfo($event)">
+    Submit
+  </button>
+</form>
