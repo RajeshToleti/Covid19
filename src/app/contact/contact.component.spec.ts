@@ -19,12 +19,12 @@ describe("ContactComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
-    //expect(component).toBeTruthy();
-  });
+  // it("should create", () => {
+  //   expect(component).toBeTruthy();
+  // });
 
-  it("should render the email address", () => {
-    //const link = fixture.debugElement.nativeElement.querySelector("a");
-    //expect(link.text).toContain("I@Rajesh.name");
-  });
+  // it("should render the email address", () => {
+  //   const link = fixture.debugElement.nativeElement.querySelector("a");
+  //   expect(link.text).toContain("I@Rajesh.name");
+  // });
 });
