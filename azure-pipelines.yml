@@ -50,17 +50,17 @@ steps:
     testResultsFiles: "**/TESTS*.xml"
 
 
-- task: Npm@1
-  displayName: 'E2E Test Angular'
-  inputs:
-    command: custom
-    customCommand: run e2e
-    workingDir: src
+# - task: Npm@1
+#   displayName: 'E2E Test Angular'
+#   inputs:
+#     command: custom
+#     customCommand: run e2e
+#     workingDir: src
 
-- task: PublishTestResults@2
-  displayName: 'Publish Angular E2E test results'
-  condition: succeededOrFailed()
-  inputs:
-    searchFolder: $(System.DefaultWorkingDirectory)/src/e2e/junit
-    testRunTitle: Angular_E2E
-    testResultsFormat: JUnit
+# - task: PublishTestResults@2
+#   displayName: 'Publish Angular E2E test results'
+#   condition: succeededOrFailed()
+#   inputs:
+#     searchFolder: $(System.DefaultWorkingDirectory)/src/e2e/junit
+#     testRunTitle: Angular_E2E
+#     testResultsFormat: JUnit
