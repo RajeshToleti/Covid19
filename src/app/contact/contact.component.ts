@@ -74,7 +74,7 @@ export class ContactComponent implements OnInit {
     //   (error) => console.log(error)
     // );
     this.http
-      .post("https://localhost:44368/api/Feedbacks", body, {
+      .post("https://feedbackapi1.azurewebsites.net/api/feedbacks", body, {
         headers,
       })
       .subscribe(
