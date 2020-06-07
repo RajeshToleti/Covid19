@@ -12,6 +12,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from "@angular/material";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-contact",
   templateUrl: "./contact.component.html",
@@ -25,7 +26,11 @@ export class ContactComponent implements OnInit {
   emailFormControl: FormControl;
   commentFormControl: FormControl;
 
-  constructor(private _snackBar: MatSnackBar, private http: HttpClient) {}
+  constructor(
+    private _snackBar: MatSnackBar,
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.createFormControls();
@@ -87,13 +92,18 @@ export class ContactComponent implements OnInit {
     let message =
       this.nameFormControl.value + ", Thanks for your valuable feedback!";
 
-    this._snackBar.open(message, " ", {
-      duration: 3000,
+    this._snackBar
+      .open(message, " ", {
+        duration: 3000,
 
-      horizontalPosition: "center",
-      verticalPosition: "top",
-    });
+        horizontalPosition: "center",
+        verticalPosition: "top",
+      })
+      .afterDismissed()
+      .subscribe(() => {
+        this.router.navigate(["/app-root"]);
+      });
 
-    this.contactForm.reset();
+    //this.contactForm.reset();
   }
 }
