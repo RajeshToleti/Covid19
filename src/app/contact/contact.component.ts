@@ -101,7 +101,7 @@ export class ContactComponent implements OnInit {
       })
       .afterDismissed()
       .subscribe(() => {
-        this.router.navigate(["/app-root"]);
+        this.router.navigate([""]);
       });
 
     //this.contactForm.reset();
